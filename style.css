@@ -1,0 +1,158 @@
+/* Set body background color */
+body {
+    background-color: #0f0f0f;
+    color: #f2f2f2;
+  }
+  
+  /* Set navigation bar background color */
+  .navbar {
+    background-color: #0f0f0f;
+  }
+  
+  /* Set navigation links color */
+  .navbar a {
+    color: #f2f2f2;
+  }
+  
+  /* Set jumbotron background color */
+  .jumbotron {
+    background-color: #f2f2f2;
+  }
+
+  .jumbotron h1 {
+    color: #0f0f0f;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .jumbotron p {
+    color: #0f0f0f;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  
+  /* Set button color */
+  .btn-primary {
+    background-color: #0f0f0f;
+    border-color: #0f0f0f;
+  }
+  .btn-primary:hover {
+    background-color: #0f0f0f;
+    border-color: #f2f2f2;
+  }
+  
+  /* Set card background color */
+  .card {
+    background-color: #222222;
+    color: #f2f2f2;
+    box-shadow: 0px 2px 5px #333333;
+  }
+
+  .card img{
+    background-color: #f2f2f2;
+    }
+
+  .card li{
+
+
+  }
+
+  .card-featured:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Set card title color */
+  .card-title {
+    color: #f2f2f2;
+  }
+  
+  /* Set chart line color */
+  #marketChart .borderColor {
+    border-color: #3B5998;
+  }
+  
+  /* Set chart data point color */
+  #marketChart .pointBackgroundColor {
+    background-color: #3B5998;
+  }
+  
+  /* Set chart data point hover color */
+  #marketChart .pointHoverBackgroundColor {
+    background-color: #3B5998;
+  }
+  
+  /* Set chart label color */
+  #marketChart .scale-0-label {
+    color: #ffffff;
+  }
+  
+  /* Set chart tick color */
+  #marketChart .tick {
+    color: #f2f2f2;
+  }
+
+  ::-webkit-scrollbar {
+    height: 12px;
+  }
+  
+  /* Style the thumb (the draggable handle) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #1e1e1e;
+    border-radius: 6px;
+  }
+  
+  /* Style the track (the area behind the thumb) */
+  ::-webkit-scrollbar-track {
+    background-color: #424242;
+    border-radius: 6px;
+  }
+  
+  /* Style the corner where the vertical and horizontal scroll bars meet */
+  ::-webkit-scrollbar-corner {
+    background-color: #1e1e1e;
+  }
+  
+  .testimonial-section {
+    background-color: #0f0f0f;
+    color: #fff;
+  }
+  
+  .testimonial-card {
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 2px 5px #333333;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial-card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-card h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+  .testimonial-card span {
+    font-size: 1rem;
+    font-style: italic;
+    color: #aaa;
+  }
+  section {
+    margin-bottom: 50px;
+  }

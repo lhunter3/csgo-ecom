@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSGO E-Commerce Home Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-k8Og7V4sJu4PjZhV2GvrUhJ/r7VUdtS6dXVyZPVS8ODUv76JmTLcHbKEJroPIM+AKn0MIZnDXCZO9JOhzQa8GQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+   <!-- Navigation Bar -->
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CS:GO Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inventory</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Buy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sell</a>
+        </li>
+ 
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1>Welcome to CSGO E-Commerce</h1>
+    <p>Shop for all your favorite CSGO items.</p>
+    <hr class="my-4">
+  </div>
+
+
+</section>
+  <div class="container mt-5">
+    <h2>CS:GO Stocks</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <canvas id="marketChart"></canvas>
+      </div>
+      <div class="col-md-4 market-info">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Market Information</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between mb-1">
+                <span>Last Price:</span>
+                <span>$10.50</span>
+              </li>
+              <li class="d-flex justify-content-between mb-1">
+                <span>Change:</span>
+                <span>+0.25 (+2.4%)</span>
+              </li>
+              <li class="d-flex justify-content-between">
+                <span>Volume:</span>
+                <span>1,500</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+      var ctx = document.getElementById('marketChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          datasets: [{
+            label: 'CS:GO Market Value',
+            data: [10000, 10500, 10300, 10800, 11200, 11400, 11500, 11800, 12500, 13000, 14000, 14500],
+            fill: false,
+            borderColor: '#3B5998',
+            borderWidth: 2,
+            pointRadius: 2,
+            pointBackgroundColor: '#3B5998',
+            pointHoverRadius: 4,
+            pointHoverBackgroundColor: '#3B5998'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            xAxes: [{
+              display: true,
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                fontColor: "#666"
+              }
+            }],
+            yAxes: [{
+              display: true,
+              gridLines: {
+                drawBorder: false
+              },
+              ticks: {
+                fontColor: "#666",
+                beginAtZero: false,
+                userCallback: function(value, index, values) {
+                  value = value.toString();
+                  value = value.split(/(?=(?:...)*$)/);
+                  value = value.join(',');
+                  return '$' + value;
+                }
+              }
+            }]
+          },
+          legend: {
+            display: false
+          },
+          tooltips: {
+            callbacks: {
+              label: function(tooltipItem, data) {
+                var value = data.datasets[0].data[tooltipItem.index];
+                value = value.toString();
+                value = value.split(/(?=(?:...)*$)/);
+                value = value.join(',');
+                return '$' + value;
+              }
+            }
+          }
+        }
+      });
+  </script>
+
+<!-- Featured Items -->
+<section>
+<div class="container mt-5">
+    <h2>Featured Items</h2>
+    <div class="overflow-auto">
+      <div class="row flex-nowrap">
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm card-featured">
+            <img class="card-img-top" src="280x210.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Item Name</h5>
+              <p class="card-text">Item Description</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm card-featured">
+            <img class="card-img-top" src="280x210.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Item Name</h5>
+              <p class="card-text">Item Description</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm card-featured">
+            <img class="card-img-top" src="280x210.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Item Name</h5>
+              <p class="card-text">Item Description</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm card-featured">
+            <img class="card-img-top" src="280x210.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Item Name</h5>
+              <p class="card-text">Item Description</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card border-0 shadow-sm card-featured">
+              <img class="card-img-top" src="280x210.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Item Name</h5>
+                <p class="card-text">Item Description</p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card border-0 shadow-sm card-featured">
+              <img class="card-img-top" src="280x210.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Item Name</h5>
+                <p class="card-text">Item Description</p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+</section>
+<section class="testimonial-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card shadow-sm">
+            <h5>John Doe</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum sapien sed lacus dictum, in maximus tellus viverra. Fusce a ipsum nec lectus dignissim auctor. Donec fermentum magna eget ligula convallis elementum.</p>
+            <span>Customer</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial-card shadow-sm">
+              <h5>John Doe</h5>
+              <p>Lorem ipsum dolor sit amet,suspendisse bibendum sapien sed lacus dictum, in maximus tellus viverra. Fusce a ipsum nec lectus dignissim auctor. Donec fermentum magna eget ligula convallis elementum.</p>
+              <span>Customer</span>
+            </div>
+          </div>
+        <div class="col-md-4">
+          <div class="testimonial-card shadow-sm">
+            <h5>John Doe</h5>
+            <p>Lorem ipsum dolor sit amet,suspendisse bibendum sapien sed lacus dictum, in maximus tellus viverra. Fusce a ipsum nec lectus dignissim auctor. Donec fermentum magna eget ligula convallis elementum.</p>
+            <span>Customer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+</body>
+
+<footer class="bg-light">
+<div class="container">
+    <div class="row">
+    <div class="col-md-4">
+       
+    </div>
+    <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h5>Connect with us</h5>
+        <ul class="list-unstyled">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+</footer>

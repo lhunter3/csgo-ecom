@@ -89,12 +89,12 @@
             label: 'CS:GO Market Value',
             data: [10000, 10500, 10300, 10800, 11200, 11400, 11500, 11800, 12500, 13000, 14000, 14500],
             fill: false,
-            borderColor: '#3B5998',
+            borderColor: '#f2f2f2',
             borderWidth: 2,
             pointRadius: 2,
-            pointBackgroundColor: '#3B5998',
+            pointBackgroundColor: '#f2f2f2',
             pointHoverRadius: 4,
-            pointHoverBackgroundColor: '#3B5998'
+            pointHoverBackgroundColor: '#f2f2f2'
           }]
         },
         options: {
@@ -104,10 +104,10 @@
             xAxes: [{
               display: true,
               gridLines: {
-                display: false
+                display: true
               },
               ticks: {
-                fontColor: "#666"
+                fontColor: "#333333"
               }
             }],
             yAxes: [{
@@ -116,7 +116,7 @@
                 drawBorder: false
               },
               ticks: {
-                fontColor: "#666",
+                fontColor: "#333333",
                 beginAtZero: false,
                 userCallback: function(value, index, values) {
                   value = value.toString();
